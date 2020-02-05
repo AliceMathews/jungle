@@ -4,12 +4,7 @@ class OrdersController < ApplicationController
 
     @cart = {}
     @order.line_items.each { |el| @cart[el["product_id"]] = el["quantity"] }
-    puts "cart: #{@cart}"
-
     @enhanced_order ||= Product.where(id: @cart.keys).map { |product| { product: product, quantity: @cart[product.id] } }
-
-    puts "order: #{@order.inspect}"
-    puts "enhanced order: #{@enhanced_order.inspect}"
   end
 
   def create
