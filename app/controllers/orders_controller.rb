@@ -6,10 +6,10 @@ class OrdersController < ApplicationController
     @order.line_items.each { |el| @cart[el["product_id"]] = el["quantity"] }
     puts "cart: #{@cart}"
 
-    @product_ids = @order.line_items.map { |el| el.product_id }
     @enhanced_order ||= Product.where(id: @cart.keys).map { |product| { product: product, quantity: @cart[product.id] } }
 
-    puts "order: #{@enhanced_order.inspect}"
+    puts "order: #{@order.inspect}"
+    puts "enhanced order: #{@enhanced_order.inspect}"
   end
 
   def create
