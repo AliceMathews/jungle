@@ -18,8 +18,12 @@ Rails.application.routes.draw do
     resources :categories, only: [:index, :new, :create]
   end
 
-  # These routes will be for signup. The first renders a form in the browse, the second will
-  # receive the form and create a user in our database using the data given to us by the user.
+  #login routes
+  get "/login" => "sessions#new"
+  post "/login" => "sessions#create"
+  get "/logout" => "sessions#destroy"
+
+  # Signup routes
   get "/signup" => "users#new"
   post "/users" => "users#create"
 end
