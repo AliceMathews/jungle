@@ -6,12 +6,10 @@ class Admin::ProductsController < ApplicationController
   end
 
   def new
-    puts "IM HERE"
     @product = Product.new
   end
 
   def create
-    puts "IM HERE"
     @product = Product.new(product_params)
 
     if @product.save
