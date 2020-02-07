@@ -9,6 +9,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to "/"
     else
+      flash[:alert] = "Error creating user"
       redirect_to "/signup"
     end
   end
