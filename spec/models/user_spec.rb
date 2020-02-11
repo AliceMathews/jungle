@@ -44,4 +44,15 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include("Name can't be blank")
     end
   end
+
+  describe ".authenticate_with_credentials" do
+    it "should return nil if given invalid password" do
+    end
+
+    it "should return nil if given invalid email" do
+    end
+
+    it "should return a the user if given correct credentials" do
+    end
+  end
 end
