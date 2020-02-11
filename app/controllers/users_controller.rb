@@ -10,6 +10,7 @@ class UsersController < ApplicationController
       redirect_to "/"
     else
       flash[:alert] = "Error creating user"
+      flash[:alert] = @user.errors.full_messages[0]
       redirect_to "/signup"
     end
   end
