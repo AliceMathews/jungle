@@ -63,5 +63,17 @@ RSpec.describe User, type: :model do
       @user = User.authenticate_with_credentials("test3@test.com", "password")
       expect(@user).to eql(@user3)
     end
+
+    it "should authenticate an email address with added spaces infront" do
+      @user1 = User.create(name: "alice", email: "test@test.com", password: "password", password_confirmation: "password")
+      @user = User.authenticate_with_credentials("   test@test.com", "password")
+      expect(@user).to eql(@user1)
+    end
+
+    it "should not be case sensitive for email" do
+      @user1 = User.create(name: "alice", email: "test@test.com", password: "password", password_confirmation: "password")
+      @user = User.authenticate_with_credentials("Test@test.com", "password")
+      expect(@user).to eql(@user1)
+    end
   end
 end
