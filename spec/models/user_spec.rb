@@ -47,12 +47,21 @@ RSpec.describe User, type: :model do
 
   describe ".authenticate_with_credentials" do
     it "should return nil if given invalid password" do
+      @user1 = User.create(name: "alice", email: "test@test.com", password: "password", password_confirmation: "password")
+      @user = User.authenticate_with_credentials("test@test.com", "ghgasdf")
+      expect(@user).to eql(nil)
     end
 
     it "should return nil if given invalid email" do
+      @user1 = User.create(name: "stu", email: "test2@test.com", password: "password", password_confirmation: "password")
+      @user = User.authenticate_with_credentials("test45@test.com", "password")
+      expect(@user).to eql(nil)
     end
 
     it "should return a the user if given correct credentials" do
+      @user3 = User.create(name: "Hannah", email: "test3@test.com", password: "password", password_confirmation: "password")
+      @user = User.authenticate_with_credentials("test3@test.com", "password")
+      expect(@user).to eql(@user3)
     end
   end
 end
