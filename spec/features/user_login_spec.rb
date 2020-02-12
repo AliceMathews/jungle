@@ -16,16 +16,5 @@ RSpec.feature "UserLogins", type: :feature, js: true do
 
     nav = page.find(".navbar-right")
     expect(nav).to have_content("Signed in as")
-
-    save_screenshot
-
-    # nav = page.find(".navbar-right")
-    # expect(nav).to have_content("My Cart (0)")
-
-    # product = first("article.product")
-    # product.find("button", :text => /\AAdd\z/).click
-
-    # nav = page.find(".navbar-right")
-    # expect(nav).to have_content("My Cart (1)")
   end
 end
