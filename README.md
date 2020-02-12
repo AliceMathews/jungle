@@ -1,7 +1,27 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2. I inherited a fully functioning app and added the following features & bug fixes.
 
+### Features
+
+- Sold out badge - when a product has 0 quantity, the sold out badge is displayed. This is implemented as a boolean method in the Product model
+- Admin Categories - added the admin/categories routes, views & controller to allow admins to view and add categories.
+- User authentication - added register/login/logout functionality utilizing 'has_secure_password' in the User model.
+- Order details page enhancement - added table to show each line-item in the order (image, name, description, quantity, price), the total cost, and the email used to make the order.
+
+### Bug fixes
+
+- Admin authorization - used basic http authentication to protect all admin routes
+- Checking out with empty cart - if the user goes to the carts#show page, instead of displaying the contents and checkout button, they now see a message telling them their cart is empty.
+
+Screenshot of the page on load
+![Screenshot of the page on load](https://github.com/AliceMathews/scheduler/blob/master/docs/Main%20screen.png)
+
+Screenshot of the order confirmation page
+![Screenshot of the order confirmation page](https://github.com/AliceMathews/scheduler/blob/master/docs/Main%20screen.png)
+
+Screenshot of the admin/categories page
+![Screenshot of the admin/categories page](https://github.com/AliceMathews/scheduler/blob/master/docs/Main%20screen.png)
 
 ## Setup
 
@@ -22,6 +42,6 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Dependencies
 
-* Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
-* PostgreSQL 9.x
-* Stripe
+- Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
+- PostgreSQL 9.x
+- Stripe
