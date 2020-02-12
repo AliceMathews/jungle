@@ -15,13 +15,10 @@ A mini e-commerce application built with Rails 4.2. I inherited a fully function
 - Checking out with empty cart - if the user goes to the carts#show page, instead of displaying the contents and checkout button, they now see a message telling them their cart is empty.
 
 Screenshot of the page on load
-![Screenshot of the page on load](https://github.com/AliceMathews/scheduler/blob/master/docs/Main%20screen.png)
+![Screenshot of the page on load](https://github.com/AliceMathews/jungle/blob/master/docs/products_page.png)
 
 Screenshot of the order confirmation page
-![Screenshot of the order confirmation page](https://github.com/AliceMathews/scheduler/blob/master/docs/Main%20screen.png)
-
-Screenshot of the admin/categories page
-![Screenshot of the admin/categories page](https://github.com/AliceMathews/scheduler/blob/master/docs/Main%20screen.png)
+![Screenshot of the order confirmation page](https://github.com/AliceMathews/jungle/blob/master/docs/order-page.png)
 
 ## Setup
 
